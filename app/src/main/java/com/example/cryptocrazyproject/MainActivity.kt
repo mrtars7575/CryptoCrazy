@@ -19,7 +19,9 @@ import androidx.navigation.navArgument
 import com.example.cryptocrazyproject.ui.theme.CryptoCrazyProjectTheme
 import com.example.cryptocrazyproject.view.CryptoDetailScreen
 import com.example.cryptocrazyproject.view.CryptoListScreen
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -33,7 +35,7 @@ class MainActivity : ComponentActivity() {
 
 
                     composable("crypto_list_screen"){
-                        //crypto list
+                        //crypto  list screen
                         CryptoListScreen(navController = navController)
                     }
                     composable("crypto_detail_screen/{cryptoId}/{cryptoPrice}",
@@ -43,7 +45,7 @@ class MainActivity : ComponentActivity() {
                         }, navArgument("cryptoPrice"){
                             type = NavType.StringType
                         }) ){
-                        // crypto detail
+                        // crypto  detail screen
 
                         val cryptoId = remember { it.arguments?.getString("cryptoId") }
 
